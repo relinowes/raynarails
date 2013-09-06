@@ -1,0 +1,25 @@
+<h1>Listing mountains</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Elevation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mountains.each do |mountain| %>
+  <tr>
+    <td><%= mountain.name %></td>
+    <td><%= mountain.elevation %></td>
+    <td><%= link_to 'Show', mountain %></td>
+    <td><%= link_to 'Edit', edit_mountain_path(mountain) %></td>
+    <td><%= link_to 'Destroy', mountain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mountain', new_mountain_path %>
